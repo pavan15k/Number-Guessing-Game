@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.Random;
+public class Firstclass
+{
+	public static void main (String []args)
+	{
+		Random rmd = new Random();
+		int magic = rmd.nextInt(1,100);
+		Scanner key = new Scanner(System.in);
+		for (int i=1; i<=6; i++)
+		{
+			System.out.println("Guess (1-100)");
+			int guess=key.nextInt();
+					if (guess == magic)
+					{
+						System.out.println("U Won the Game");
+						return;
+					}
+			if (guess > magic && i<=5)
+				System.out.println("Try some Lesser Number");
+			if (guess < magic && i<=5)
+				System.out.println("Try some Greater Number");
+		}
+		System.out.println("Sorry!! Try Next Time:: Correct Numer = " + magic);
+		}
+}
